@@ -7,7 +7,7 @@ def requirements():
 
 setuptools.setup(
 	name='android-sdk-platform-tools-supporter',
-	version='0.0.4',
+	version='0.0.5',
 	description='Android sdk platform tools supporter',
 	long_description=open('README.md').read(),
 	long_description_content_type='text/markdown',
