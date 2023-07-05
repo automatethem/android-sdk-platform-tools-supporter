@@ -22,7 +22,7 @@ class AndroidSdkPlatformTools:
         zip_file.extractall(self.base_directory)
         zip_file.close()
         
-    def check_connected(self):    
+    def check_devices(self):    
         cmd = f"{self.base_directory}/platform-tools/adb"
         outputs = subprocess.check_output([cmd, "devices"]).decode('utf-8')
         device = None
@@ -34,7 +34,7 @@ class AndroidSdkPlatformTools:
                 device = output
                 break
         self.device = device
-        return device
+        return [device]
     
     def data_disable(self):
         cmd = f"{self.base_directory}/platform-tools/adb -s {self.device} shell svc data disable"
