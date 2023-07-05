@@ -3,7 +3,7 @@ import platform
 import subprocess
 import time
 
-class ChangeIp:
+class AndroidSdkPlatformTools:
     def __init__(self, base_directory):
         super().__init__()
         self.base_directory = base_directory
