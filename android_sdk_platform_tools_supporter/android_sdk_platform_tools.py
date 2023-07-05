@@ -1,6 +1,7 @@
 import os
 import platform
 import subprocess
+import zipfile
 
 class AndroidSdkPlatformTools:
     def __init__(self, base_directory):
@@ -10,16 +11,15 @@ class AndroidSdkPlatformTools:
         self.ip = None
 
         if not os.path.exists(f"{self.base_directory}/platform-tools"):
-        import zipfile
-        if platform.system() == 'Darwin': #맥
-            from_zip = f"{self.base_directory}/platform-tools_r34.0.3-darwin.zip"
-        elif platform.system() == 'Windows': #윈도우
-            from_zip = f"{self.base_directory}/platform-tools_r34.0.3-windows.zip"
-        elif platform.system() == 'Linux': #리눅스 (구글 콜랩)
-            from_zip = f"{self.base_directory}/platform-tools_r34.0.3-linux.zip"
-        zip_file = zipfile.ZipFile(from_zip)
-        zip_file.extractall(self.base_directory)
-        zip_file.close()
+            if platform.system() == 'Darwin': #맥
+                from_zip = f"{self.base_directory}/platform-tools_r34.0.3-darwin.zip"
+            elif platform.system() == 'Windows': #윈도우
+                from_zip = f"{self.base_directory}/platform-tools_r34.0.3-windows.zip"
+            elif platform.system() == 'Linux': #리눅스 (구글 콜랩)
+                from_zip = f"{self.base_directory}/platform-tools_r34.0.3-linux.zip"
+            zip_file = zipfile.ZipFile(from_zip)
+            zip_file.extractall(self.base_directory)
+            zip_file.close()
         
     def check_devices(self):    
         cmd = f"{self.base_directory}/platform-tools/adb"
