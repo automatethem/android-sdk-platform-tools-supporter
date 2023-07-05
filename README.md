@@ -12,7 +12,7 @@ https://www.bangseongbeom.com/sys-path-pythonpath.html
 import os
 import time
 from android_sdk_platform_tools_supporter.android_sdk_platform_tools import AndroidSdkPlatformTools
-from python_supporter.check_ip import check_ip
+from python_supporter.check_ip import check_ip #pip install python-supporter
 
 base_directory = os.path.dirname(__file__) + "/platform-tools"
 platform_tools = AndroidSdkPlatformTools(base_directory)
