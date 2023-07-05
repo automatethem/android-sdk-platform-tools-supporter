@@ -8,7 +8,7 @@ class AndroidSdkPlatformTools:
     def __init__(self, base_directory=None):
         super().__init__()
         self.base_directory = base_directory
-        self.device = None
+        self.devices = []
 
         if self.base_directory:
             if not os.path.exists(f"{self.base_directory}/platform-tools"):
@@ -36,10 +36,11 @@ class AndroidSdkPlatformTools:
                 output = output.split("\t")[0]
                 device = output
                 break
-        self.device = device
         if device:
+            self.devices = [device]
             return [device]
         else:
+            self.devices = []
             return []
     
     def data_disable(self):
