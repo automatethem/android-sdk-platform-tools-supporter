@@ -48,7 +48,7 @@ class AndroidSdkPlatformTools:
             adb = f"{self.base_directory}/platform-tools/adb"
         else:
             adb = "adb"
-        cmd = f"{adb} -s {self.device} shell svc data disable"
+        cmd = f"{adb} -s {self.devices[0]} shell svc data disable"
         os.system(cmd)
 
     def data_enable(self):
@@ -56,5 +56,5 @@ class AndroidSdkPlatformTools:
             adb = f"{self.base_directory}/platform-tools/adb"
         else:
             adb = "adb"
-        cmd = f"{adb} -s {self.device} shell svc data enable"
+        cmd = f"{adb} -s {self.devices[0]} shell svc data enable"
         os.system(cmd)
