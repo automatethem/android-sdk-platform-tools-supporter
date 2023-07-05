@@ -10,7 +10,7 @@ class ChangeIp:
         self.device = None
         self.ip = None
 
-    def connect_to_device(self):    
+    def check_connected(self):    
         if not os.path.exists(f"{self.base_directory}/platform-tools"):
             import zipfile
             if platform.system() == 'Darwin': #맥
