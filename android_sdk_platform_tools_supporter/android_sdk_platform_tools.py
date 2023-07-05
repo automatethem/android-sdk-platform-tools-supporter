@@ -1,7 +1,6 @@
 import os
 import platform
 import subprocess
-import time
 
 class AndroidSdkPlatformTools:
     def __init__(self, base_directory):
