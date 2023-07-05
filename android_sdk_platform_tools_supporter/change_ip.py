@@ -34,7 +34,10 @@ class AndroidSdkPlatformTools:
                 device = output
                 break
         self.device = device
-        return [device]
+        if device:
+            return [device]
+        else:
+            return []
     
     def data_disable(self):
         cmd = f"{self.base_directory}/platform-tools/adb -s {self.device} shell svc data disable"
