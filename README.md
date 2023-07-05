@@ -11,12 +11,13 @@ https://www.bangseongbeom.com/sys-path-pythonpath.html
 ```
 import os
 import time
-from python_supporter.change_ip import ChangeIp
+from android_sdk_platform_tools_supporter.android_sdk_platform_tools import AndroidSdkPlatformTools
+from python_supporter.check_ip import check_ip
 
 base_directory = os.path.dirname(__file__) + "/platform-tools"
-change_ip = ChangeIp(base_directory)
+platform_tools = AndroidSdkPlatformTools(base_directory)
 
-device = change_ip.connect_to_device()
+devices = platform_tools.check_devices()
     
 if not device:
     print(f"USB에 디바이스가 연결되지 않았습니다.")
@@ -25,14 +26,14 @@ if not device:
 print(f"연결된 디바이스: {device}")
 
 print("모바일 데이터 해제")
-change_ip.data_disable()
+platform_tools.data_disable()
 
 print("1초 쉬기")
 time.sleep(1)
 
 print("모바일 데이터 연결")
-change_ip.data_enable()
+platform_tools.data_enable()
 
-ip = change_ip.check_ip()
+ip = check_ip()
 print(f"PC IP: {ip}")
 ```
