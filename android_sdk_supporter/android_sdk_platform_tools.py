@@ -4,7 +4,7 @@ import subprocess
 import zipfile
 import sys
 
-class AndroidSdkPlatformTools:
+class PlatformTools:
     def __init__(self, base_directory=None):
         super().__init__()
         self.base_directory = base_directory
