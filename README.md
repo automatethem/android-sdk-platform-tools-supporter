@@ -15,11 +15,11 @@ https://drive.google.com/drive/folders/1mfYHbCbwM6HIexV9gQvtPFnIEwo26t0s?usp=dri
 ```
 import os
 import time
-from android_sdk_platform_tools_supporter.android_sdk_platform_tools import AndroidSdkPlatformTools
+from android_sdk_supporter.android_sdk_platform_tools import PlatformTools
 from python_supporter.check_ip import check_ip #pip install python-supporter
 
 base_directory = os.path.dirname(__file__) + "/android_sdk/platform-tools"
-platform_tools = AndroidSdkPlatformTools(base_directory)
+platform_tools = PlatformTools(base_directory)
 
 devices = platform_tools.check_devices()
     
