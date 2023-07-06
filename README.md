@@ -1,6 +1,7 @@
 # android-sdk-supporter
 
-download android_sdk  
+## android_sdk 다운로드
+ 
 명령줄 도구  
 https://developer.android.com/studio/command-line?hl=ko#tools-sdk  
 Android SDK 명령줄 도구 (android_sdk\cmdline-tools)  
