@@ -1,7 +1,6 @@
 # android-sdk-platform-tools-supporter
 
-download android_sdk
-https://drive.google.com/drive/folders/1mfYHbCbwM6HIexV9gQvtPFnIEwo26t0s?usp=drive_link  
+download android_sdk  
 명령줄 도구  
 https://developer.android.com/studio/command-line?hl=ko#tools-sdk  
 Android SDK 명령줄 도구 (android_sdk\cmdline-tools)  
@@ -9,7 +8,9 @@ https://developer.android.com/studio#command-tools
 Android SDK 빌드 도구 (android_sdk\build-tools)  
 https://androidsdkmanager.azurewebsites.net/Buildtools  
 Android SDK 플랫폼 도구 (android_sdk\platform-tools)  
-https://developer.android.com/studio/releases/platform-tools?hl=ko#downloads.html
+https://developer.android.com/studio/releases/platform-tools?hl=ko#downloads.html  
+google drive  
+https://drive.google.com/drive/folders/1mfYHbCbwM6HIexV9gQvtPFnIEwo26t0s?usp=drive_link  
 
 ```
 import os
