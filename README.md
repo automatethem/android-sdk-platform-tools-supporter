@@ -18,7 +18,7 @@ import time
 from android_sdk_platform_tools_supporter.android_sdk_platform_tools import AndroidSdkPlatformTools
 from python_supporter.check_ip import check_ip #pip install python-supporter
 
-base_directory = os.path.dirname(__file__) + "/platform-tools"
+base_directory = os.path.dirname(__file__) + "/android_sdk/platform-tools"
 platform_tools = AndroidSdkPlatformTools(base_directory)
 
 devices = platform_tools.check_devices()
