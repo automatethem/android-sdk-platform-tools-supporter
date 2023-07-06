@@ -35,6 +35,14 @@ R95RB00QRCY     device
 
 (base) C:\Users\Administrator\Desktop\네이버쇼핑검색클릭업무자동화앱v0.4\platform-tools\platform-tools>        
         '''
+        '''
+(base) C:\Users\Administrator\Desktop\calculator-rpa-app-reflex-appium-android-main\platform-tools\platform-tools>adb devices
+List of devices attached
+R95RB00QRCY     offline
+
+
+(base) C:\Users\Administrator\Desktop\calculator-rpa-app-reflex-appium-android-main\platform-tools\platform-tools>        
+        '''
         outputs = subprocess.check_output([cmd, "devices"]).decode('utf-8')
         device = None
         for output in outputs.split("\n")[1:]:
