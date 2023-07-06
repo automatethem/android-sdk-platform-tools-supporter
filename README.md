@@ -1,4 +1,4 @@
-# android-sdk-platform-tools-supporter
+# android-sdk-supporter
 
 download android_sdk  
 명령줄 도구  
