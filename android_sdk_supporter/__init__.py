@@ -1,1 +1,1 @@
-from . import android_sdk_platform_tools
+from . import platform_tools
