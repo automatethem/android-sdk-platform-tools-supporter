@@ -78,7 +78,7 @@ R95RB00QRCY     device
         cmd = f"{adb} -s {self.devices[0]} shell svc data enable"
         os.system(cmd)
 
-    def cmd(self, command):
+    def cmd(self, command):
         if self.android_sdk_directory:
             command = f"{self.android_sdk_directory}/platform-tools/{command}"
         os.system(command)
