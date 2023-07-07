@@ -39,12 +39,19 @@ android_sdk_directory = os.path.dirname(__file__) + "/android_sdk"
 platform_tools = PlatformTools(android_sdk_directory)
 
 devices = platform_tools.check_devices()
-    
-if not devices or devices[0]["status"] != "device":
+
+for d in devices:
+  device = d["device"]
+  status = d["status"]
+if not devices:
+  device = ""
+  status = ""
+
+print(f"디바이스 (상태): {device} ({status})")
+
+if not device and not status:
     print(f"USB에 디바이스가 연결되지 않았습니다.")
     exit()
-
-print(f"연결된 디바이스: {devices[0]["device"]} ({devices[0]["status"]})")
 
 print("모바일 데이터 해제")
 platform_tools.data_disable()
