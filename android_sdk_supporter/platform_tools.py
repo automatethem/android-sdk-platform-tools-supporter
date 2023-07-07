@@ -58,7 +58,7 @@ class PlatformTools:
                 zip_file.extractall(self.android_sdk_directory)
                 zip_file.close()
         elif platform.system() == 'Windows': #윈도우
-            from_zip = f"{self.android_sdk_directory}/build-tools_r34-rc4-windows.zip"
+            from_zip = f"{self.android_sdk_directory}/commandlinetools-win-9477386_latest.zip"
             if not os.path.exists(from_zip):
                 zip_file = zipfile.ZipFile(from_zip)
                 zip_file.extractall(self.android_sdk_directory)
