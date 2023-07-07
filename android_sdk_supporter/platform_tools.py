@@ -63,20 +63,22 @@ R95RB00QRCY     device
         return self.devices
     
     def data_disable(self):
-        if self.android_sdk_directory:
-            adb = f"{self.android_sdk_directory}/platform-tools/adb"
-        else:
-            adb = "adb"
-        cmd = f"{adb} -s {self.devices[0]["device"]} shell svc data disable"
-        os.system(cmd)
+        if self.devices:
+            if self.android_sdk_directory:
+                adb = f"{self.android_sdk_directory}/platform-tools/adb"
+            else:
+                adb = "adb"
+            cmd = f"{adb} -s {self.devices[0]["device"]} shell svc data disable"
+            os.system(cmd)
 
     def data_enable(self):
-        if self.android_sdk_directory:
-            adb = f"{self.android_sdk_directory}/platform-tools/adb"
-        else:
-            adb = "adb"
-        cmd = f"{adb} -s {self.devices[0]["device"]} shell svc data enable"
-        os.system(cmd)
+        if self.devices:        
+            if self.android_sdk_directory:
+                adb = f"{self.android_sdk_directory}/platform-tools/adb"
+            else:
+                adb = "adb"
+            cmd = f"{adb} -s {self.devices[0]["device"]} shell svc data enable"
+            os.system(cmd)
 
     def cmd(self, command):
         if self.android_sdk_directory:
