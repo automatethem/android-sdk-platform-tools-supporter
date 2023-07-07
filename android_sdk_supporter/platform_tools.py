@@ -71,7 +71,7 @@ R95RB00QRCY     device
                 adb = f"{self.android_sdk_directory}/platform-tools/adb"
             else:
                 adb = "adb"
-            cmd = f"{adb} -s {self.devices[0]["device"]} shell svc data disable"
+            cmd = f"{adb} -s {self.devices[0]['device']} shell svc data disable"
             os.system(cmd)
 
     def data_enable(self):
@@ -83,7 +83,7 @@ R95RB00QRCY     device
                 adb = f"{self.android_sdk_directory}/platform-tools/adb"
             else:
                 adb = "adb"
-            cmd = f"{adb} -s {self.devices[0]["device"]} shell svc data enable"
+            cmd = f"{adb} -s {self.devices[0]['device']} shell svc data enable"
             os.system(cmd)
 
     def cmd(self, command):
