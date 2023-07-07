@@ -15,7 +15,7 @@ https://drive.google.com/drive/folders/1mfYHbCbwM6HIexV9gQvtPFnIEwo26t0s?usp=dri
 
 ```
 import os
-from android_sdk_supporter.platform_tools import PlatformTools
+from android_sdk_supporter.build_tools import BuildTools
 
 android_sdk_directory = os.path.dirname(__file__) + "/android_sdk"
 build_tools = BuildTools(android_sdk_directory)
@@ -23,7 +23,7 @@ build_tools = BuildTools(android_sdk_directory)
 
 ```
 import os
-from android_sdk_supporter.platform_tools import PlatformTools
+from android_sdk_supporter.cmdline_tools import CmdlineTools
 
 android_sdk_directory = os.path.dirname(__file__) + "/android_sdk"
 cmdline_tools = CmdlineTools(android_sdk_directory)
