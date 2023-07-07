@@ -37,6 +37,7 @@ class PlatformTools:
                 zip_file = zipfile.ZipFile(from_zip)
                 zip_file.extractall(self.android_sdk_directory)
                 zip_file.close()
+                os.mv(f"{self.android_sdk_directory}/android-UpsideDownCake", f"{self.android_sdk_directory}/build-tools")
         elif platform.system() == 'Windows': #윈도우
             from_zip = f"{self.android_sdk_directory}/build-tools_r34-rc4-windows.zip"
             if not os.path.exists(from_zip):
