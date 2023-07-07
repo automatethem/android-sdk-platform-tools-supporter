@@ -11,65 +11,25 @@ class PlatformTools:
         self.android_sdk_directory = android_sdk_directory
         self.devices = []
 
-        #build-tools
-        build_tools_directory = f"{self.android_sdk_directory}/build-tools"
-        if not os.path.exists(build_tools_directory):
-            if platform.system() == 'Darwin': #맥
-                from_zip = f"{self.android_sdk_directory}/build-tools_r34-rc4-macosx.zip"
-                zip_file = zipfile.ZipFile(from_zip)
-                zip_file.extractall(self.android_sdk_directory)
-                zip_file.close()
-                shutil.move(f"{self.android_sdk_directory}/android-UpsideDownCake", f"{self.android_sdk_directory}/build-tools")
-            elif platform.system() == 'Windows': #윈도우
-                from_zip = f"{self.android_sdk_directory}/build-tools_r34-rc4-windows.zip"
-                zip_file = zipfile.ZipFile(from_zip)
-                zip_file.extractall(self.android_sdk_directory)
-                zip_file.close()
-                shutil.move(f"{self.android_sdk_directory}/android-UpsideDownCake", f"{self.android_sdk_directory}/build-tools")
-            elif platform.system() == 'Linux': #리눅스 (구글 콜랩)
-                from_zip = f"{self.android_sdk_directory}/build-tools_r34-rc4-linux.zip"
-                zip_file = zipfile.ZipFile(from_zip)
-                zip_file.extractall(self.android_sdk_directory)
-                zip_file.close()
-                shutil.move(f"{self.android_sdk_directory}/android-UpsideDownCake", f"{self.android_sdk_directory}/build-tools")
-
-        #cmdline-tools
-        cmdline_tools_directory = f"{self.android_sdk_directory}/cmdline-tools"
-        if not os.path.exists(cmdline_tools_directory):
-            if platform.system() == 'Darwin': #맥
-                from_zip = f"{self.android_sdk_directory}/commandlinetools-mac-9477386_latest.zip"
-                zip_file = zipfile.ZipFile(from_zip)
-                zip_file.extractall(self.android_sdk_directory)
-                zip_file.close()
-            elif platform.system() == 'Windows': #윈도우
-                from_zip = f"{self.android_sdk_directory}/commandlinetools-win-9477386_latest.zip"
-                zip_file = zipfile.ZipFile(from_zip)
-                zip_file.extractall(self.android_sdk_directory)
-                zip_file.close()
-            elif platform.system() == 'Linux': #리눅스 (구글 콜랩)
-                from_zip = f"{self.android_sdk_directory}/commandlinetools-linux-9477386_latest.zip"
-                zip_file = zipfile.ZipFile(from_zip)
-                zip_file.extractall(self.android_sdk_directory)
-                zip_file.close()
-
-        #platform-tools
-        platform_tools_directory = f"{self.android_sdk_directory}/platform-tools"
-        if not os.path.exists(platform_tools_directory):
-            if platform.system() == 'Darwin': #맥
-                from_zip = f"{self.android_sdk_directory}/platform-tools_r34.0.3-darwin.zip"
-                zip_file = zipfile.ZipFile(from_zip)
-                zip_file.extractall(self.android_sdk_directory)
-                zip_file.close()
-            elif platform.system() == 'Windows': #윈도우
-                from_zip = f"{self.android_sdk_directory}/platform-tools_r34.0.3-windows.zip"
-                zip_file = zipfile.ZipFile(from_zip)
-                zip_file.extractall(self.android_sdk_directory)
-                zip_file.close()
-            elif platform.system() == 'Linux': #리눅스 (구글 콜랩)
-                from_zip = f"{self.android_sdk_directory}/platform-tools_r34.0.3-linux.zip"
-                zip_file = zipfile.ZipFile(from_zip)
-                zip_file.extractall(self.android_sdk_directory)
-                zip_file.close()
+        if self.android_sdk_directory:
+            #platform-tools
+            platform_tools_directory = f"{self.android_sdk_directory}/platform-tools"
+            if not os.path.exists(platform_tools_directory):
+                if platform.system() == 'Darwin': #맥
+                    from_zip = f"{self.android_sdk_directory}/platform-tools_r34.0.3-darwin.zip"
+                    zip_file = zipfile.ZipFile(from_zip)
+                    zip_file.extractall(self.android_sdk_directory)
+                    zip_file.close()
+                elif platform.system() == 'Windows': #윈도우
+                    from_zip = f"{self.android_sdk_directory}/platform-tools_r34.0.3-windows.zip"
+                    zip_file = zipfile.ZipFile(from_zip)
+                    zip_file.extractall(self.android_sdk_directory)
+                    zip_file.close()
+                elif platform.system() == 'Linux': #리눅스 (구글 콜랩)
+                    from_zip = f"{self.android_sdk_directory}/platform-tools_r34.0.3-linux.zip"
+                    zip_file = zipfile.ZipFile(from_zip)
+                    zip_file.extractall(self.android_sdk_directory)
+                    zip_file.close()
                 
     '''
 $ adb devices
