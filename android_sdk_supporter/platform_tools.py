@@ -50,6 +50,7 @@ R95RB00QRCY     device
             if output:
                 device, status = output.split("\t")
                 devices.append({"device": device, "status": status})
+        #print(devices) #[{'device': 'R95RB00QRCY', 'status': 'unauthorized'}]
         return devices
     
     def data_disable(self):
