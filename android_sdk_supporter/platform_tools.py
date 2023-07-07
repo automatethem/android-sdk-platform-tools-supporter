@@ -11,26 +11,6 @@ class PlatformTools:
         self.android_sdk_directory = android_sdk_directory
         self.devices = []
 
-        #platform-tools
-        if platform.system() == 'Darwin': #맥
-            from_zip = f"{self.android_sdk_directory}/platform-tools_r34.0.3-darwin.zip"
-            if not os.path.exists(from_zip):
-                zip_file = zipfile.ZipFile(from_zip)
-                zip_file.extractall(self.android_sdk_directory)
-                zip_file.close()
-        elif platform.system() == 'Windows': #윈도우
-            from_zip = f"{self.android_sdk_directory}/platform-tools_r34.0.3-windows.zip"
-            if not os.path.exists(from_zip):
-                zip_file = zipfile.ZipFile(from_zip)
-                zip_file.extractall(self.android_sdk_directory)
-                zip_file.close()
-        elif platform.system() == 'Linux': #리눅스 (구글 콜랩)
-            from_zip = f"{self.android_sdk_directory}/platform-tools_r34.0.3-linux.zip"
-            if not os.path.exists(from_zip):
-                zip_file = zipfile.ZipFile(from_zip)
-                zip_file.extractall(self.android_sdk_directory)
-                zip_file.close()
-
         #build-tools
         if platform.system() == 'Darwin': #맥
             from_zip = f"{self.android_sdk_directory}/build-tools_r34-rc4-macosx.zip"
@@ -73,7 +53,27 @@ class PlatformTools:
                 zip_file = zipfile.ZipFile(from_zip)
                 zip_file.extractall(self.android_sdk_directory)
                 zip_file.close()
-    
+
+        #platform-tools
+        if platform.system() == 'Darwin': #맥
+            from_zip = f"{self.android_sdk_directory}/platform-tools_r34.0.3-darwin.zip"
+            if not os.path.exists(from_zip):
+                zip_file = zipfile.ZipFile(from_zip)
+                zip_file.extractall(self.android_sdk_directory)
+                zip_file.close()
+        elif platform.system() == 'Windows': #윈도우
+            from_zip = f"{self.android_sdk_directory}/platform-tools_r34.0.3-windows.zip"
+            if not os.path.exists(from_zip):
+                zip_file = zipfile.ZipFile(from_zip)
+                zip_file.extractall(self.android_sdk_directory)
+                zip_file.close()
+        elif platform.system() == 'Linux': #리눅스 (구글 콜랩)
+            from_zip = f"{self.android_sdk_directory}/platform-tools_r34.0.3-linux.zip"
+            if not os.path.exists(from_zip):
+                zip_file = zipfile.ZipFile(from_zip)
+                zip_file.extractall(self.android_sdk_directory)
+                zip_file.close()
+                
     '''
 $ adb devices
 List of devices attached
