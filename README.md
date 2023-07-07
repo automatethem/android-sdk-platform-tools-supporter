@@ -41,18 +41,18 @@ platform_tools = PlatformTools(android_sdk_directory)
 device = ""
 status = ""
 try:
-  devices = platform_tools.check_devices()
+    devices = platform_tools.check_devices()
 
-  for d in devices:
-     device = d["device"]
-     status = d["status"]
-     break
-  if not devices:
-     device = ""
-     status = ""
+    for d in devices:
+        device = d["device"]
+        status = d["status"]
+        break
+    if not devices:
+        device = ""
+        status = ""
 except:
-     device = ""
-     status = ""
+   device = ""
+   status = ""
 
 print(f"연결 디바이스 (상태): {device} ({status})")
 
