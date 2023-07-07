@@ -12,9 +12,10 @@ class PlatformTools:
         self.devices = []
 
         #build-tools
+        build_tools_directory = f"{self.android_sdk_directory}/build-tools"
         if platform.system() == 'Darwin': #맥
-            from_zip = f"{self.android_sdk_directory}/build-tools_r34-rc4-macosx.zip"
-            if not os.path.exists(from_zip):
+            if os.path.exists(build_tools_directory):
+                from_zip = f"{self.android_sdk_directory}/build-tools_r34-rc4-macosx.zip"
                 zip_file = zipfile.ZipFile(from_zip)
                 zip_file.extractall(self.android_sdk_directory)
                 zip_file.close()
