@@ -52,22 +52,22 @@ R95RB00QRCY     device
         else:
             cmd = "adb"
         outputs = subprocess.check_output([cmd, "devices"]).decode('utf-8')
-        devices = []
+        self.devices.clear()
         for output in outputs.split("\n")[1:]:
             output = output.strip()
             #print(output) #R95RB00QRCY     device
             if output:
                 device, status = output.split("\t")
-                devices.append({"device": device, "status": status})
-        #print(devices) #[{'device': 'R95RB00QRCY', 'status': 'unauthorized'}]
-        return devices
+                self.devices.append({"device": device, "status": status})
+        #print(self.devices) #[{'device': 'R95RB00QRCY', 'status': 'unauthorized'}]
+        return self.devices
     
     def data_disable(self):
         if self.android_sdk_directory:
             adb = f"{self.android_sdk_directory}/platform-tools/adb"
         else:
             adb = "adb"
-        cmd = f"{adb} -s {self.devices[0]} shell svc data disable"
+        cmd = f"{adb} -s {self.devices[0]["device"]} shell svc data disable"
         os.system(cmd)
 
     def data_enable(self):
@@ -75,7 +75,7 @@ R95RB00QRCY     device
             adb = f"{self.android_sdk_directory}/platform-tools/adb"
         else:
             adb = "adb"
-        cmd = f"{adb} -s {self.devices[0]} shell svc data enable"
+        cmd = f"{adb} -s {self.devices[0]["device"]} shell svc data enable"
         os.system(cmd)
 
     def cmd(self, command):
