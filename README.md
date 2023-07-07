@@ -38,16 +38,23 @@ from python_supporter.check_ip import check_ip #pip install python-supporter
 android_sdk_directory = os.path.dirname(__file__) + "/android_sdk"
 platform_tools = PlatformTools(android_sdk_directory)
 
-devices = platform_tools.check_devices()
+device = ""
+status = ""
+try:
+  devices = platform_tools.check_devices()
 
-for d in devices:
-  device = d["device"]
-  status = d["status"]
-if not devices:
-  device = ""
-  status = ""
+  for d in devices:
+     device = d["device"]
+     status = d["status"]
+     break
+  if not devices:
+     device = ""
+     status = ""
+except:
+     device = ""
+     status = ""
 
-print(f"디바이스 (상태): {device} ({status})")
+print(f"연결 디바이스 (상태): {device} ({status})")
 
 if not device and not status:
     print(f"USB에 디바이스가 연결되지 않았습니다.")
