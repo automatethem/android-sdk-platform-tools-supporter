@@ -6,13 +6,13 @@ def requirements():
         return f.read().splitlines()
 
 setuptools.setup(
-	name='android-sdk-platform-tools-supporter',
-	version='0.0.5',
-	description='Android sdk platform tools supporter',
+	name='android-sdk-supporter',
+	version='0.0.1',
+	description='Android sdk supporter',
 	long_description=open('README.md').read(),
 	long_description_content_type='text/markdown',
 	author='Sang Ki Kwon',
-	url='https://github.com/automatethem/android-sdk-platform-tools-supporter',
+	url='https://github.com/automatethem/android-sdk-supporter',
 	install_requires=requirements(),
 	author_email='automatethem@gmail.com',
 	license='MIT',
