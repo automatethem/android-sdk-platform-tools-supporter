@@ -15,6 +15,22 @@ https://drive.google.com/drive/folders/1mfYHbCbwM6HIexV9gQvtPFnIEwo26t0s?usp=dri
 
 ```
 import os
+from android_sdk_supporter.platform_tools import PlatformTools
+
+android_sdk_directory = os.path.dirname(__file__) + "/android_sdk"
+build_tools = BuildTools(android_sdk_directory)
+```
+
+```
+import os
+from android_sdk_supporter.platform_tools import PlatformTools
+
+android_sdk_directory = os.path.dirname(__file__) + "/android_sdk"
+cmdline_tools = CmdlineTools(android_sdk_directory)
+```
+
+```
+import os
 import time
 from android_sdk_supporter.platform_tools import PlatformTools
 from python_supporter.check_ip import check_ip #pip install python-supporter
