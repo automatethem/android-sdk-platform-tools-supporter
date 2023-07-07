@@ -40,7 +40,7 @@ platform_tools = PlatformTools(android_sdk_directory)
 
 devices = platform_tools.check_devices()
     
-if not devices:
+if not devices or devices[0]["status"] != "device":
     print(f"USB에 디바이스가 연결되지 않았습니다.")
     exit()
 
