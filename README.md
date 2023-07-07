@@ -19,16 +19,16 @@ import time
 from android_sdk_supporter.platform_tools import PlatformTools
 from python_supporter.check_ip import check_ip #pip install python-supporter
 
-base_directory = os.path.dirname(__file__) + "/android_sdk/platform-tools"
-platform_tools = PlatformTools(base_directory)
+android_sdk_directory = os.path.dirname(__file__) + "/android_sdk"
+platform_tools = PlatformTools(android_sdk_directory)
 
 devices = platform_tools.check_devices()
     
-if not device:
+if not devices:
     print(f"USB에 디바이스가 연결되지 않았습니다.")
     exit()
 
-print(f"연결된 디바이스: {device}")
+print(f"연결된 디바이스: {devices[0]["device"]} ({devices[0]["status"]})")
 
 print("모바일 데이터 해제")
 platform_tools.data_disable()
